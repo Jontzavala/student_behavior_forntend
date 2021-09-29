@@ -13,4 +13,17 @@ class StudentService {
             }
         })
     }
+
+    /* createStudents(){
+        const studentInfor = {
+            student: {
+                name: studentNameValue.value,
+                seat_number: seat_numberValue.value,
+                course_id: course_idValue.value
+            }
+        }
+        fetch(this.port + `/students`)
+        .then(response => response.json())
+        .then(data => )
+    } */
 }

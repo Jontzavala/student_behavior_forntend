@@ -19,7 +19,6 @@ class Student {
         <div data-id="${this.id}">
         <h3 class="student_name">${this.name}</h2>
         <p class="course_id">${this.course_id}</p>
-        <p class="course">${this.course}</p>
         <p class="seat_number">Seat Number: ${this.seat_number}</p>
         </div>
         `
