@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Student Behavior App</title>
 </head>
 <body>
-    <div id="student-form"></div>
-    <div id="courses"></div>
-    <div id="students"></div>
+    <div id="student-form">
+        <form id="student-form">
+            <label for="student-name">Name:</label>
+            <input type="text" name="name" id="student-name"/>
+        </form>
+    </div>
+    <div id="courses-container"></div>
+    <div id="students-container"></div>
     <div id="course-form"></div>
-    <div id="behaviors"></div>
+    <div id="behaviors-container"></div>
     <div id="behavior-form"></div>
 
-    
+
     <script src="src/student.js"></script>
     <script src="src/student_service.js"></script>
     <script src="src/course.js"></script>
