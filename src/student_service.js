@@ -14,16 +14,17 @@ class StudentService {
         })
     }
 
-    /* createStudents(){
+    createStudents(){
         const studentInfor = {
             student: {
                 name: studentNameValue.value,
-                seat_number: seat_numberValue.value,
-                course_id: course_idValue.value
+                seat_number: seatNumberValue.value,
+                course_id: dropDown.value
             }
         }
+        debugger
         fetch(this.port + `/students`)
         .then(response => response.json())
-        .then(data => )
-    } */
+        .then(data => console.log(data))
+    }
 }
