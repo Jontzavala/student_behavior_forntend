@@ -22,9 +22,19 @@ class StudentService {
                 course_id: dropDown.value
             }
         }
-        debugger
-        fetch(this.port + `/students`)
+        const configObject = {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify(studentInfor)
+        }
+        fetch(this.port + `/students`, configObject)
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => {
+            const stu = new Student(data)
+            stu.attachToDom()
+        })
     }
 }
