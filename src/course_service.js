@@ -9,8 +9,22 @@ class CourseService {
         .then(json => {
             json.forEach(element => {
                 const c = new Course(element)
+                c.addtoDom()
                 c.addToDropDown()
             })
         })
+    }
+
+    deleteCourse(id){
+        
+        fetch(`${this.port}/courses/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'applicaton/json'
+            }
+        })
+        .then(response => response.json())
+        .then(json => alert(json.error))
+        
     }
 }

@@ -7,6 +7,10 @@
     <title>Student Behavior App</title>
 </head>
 <body>
+    <h1> Student Behavior App</h1>
+    <h2>Filter by Course:</h2>
+    <div id="courses-container"></div>
+    <div id="students-container"></div>
     <div id="student-form">
         <h2>Create Student:</h2>
         <form id="student-form">
@@ -14,14 +18,15 @@
             <input type="text" name="name" id="student-name"/></br>
             <label for="student-seat_number">Seat Number:</label>
             <input type="text" name="seat_number" id="student-seat-number"/></br>
+            <input type="text" name ="course" id="course-id">
+            <label for="course-dropdown">Course:</label>
             <select name="course_id" id="course-dropdown">
+                <option></option>
 
             </select></br>
             <input type="submit" value="Create Student" />
         </form>
     </div>
-    <div id="courses-container"></div>
-    <div id="students-container"></div>
     <div id="course-form"></div>
     <div id="behaviors-container"></div>
     <div id="behavior-form"></div>
