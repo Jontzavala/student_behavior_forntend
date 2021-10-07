@@ -19,7 +19,7 @@ class StudentService {
             student: {
                 name: studentNameValue.value,
                 seat_number: seatNumberValue.value,
-                //course_id: dropDown.value
+                course_id: dropDown.value,
                 course_name: courseInput.value
             }
         }
@@ -37,7 +37,7 @@ class StudentService {
             const stu = new Student(data)
             const cour = Course.all.find(c => parseInt(c.id) === stu.course_id)
             if(!cour){
-                let courObj = new Course(data)
+                let courObj = new Course({id: data.course_id, name: data.course_name})
                 courObj.addtoDom()
                 courObj.addToDropDown()
             }

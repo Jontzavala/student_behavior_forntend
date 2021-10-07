@@ -1,3 +1,21 @@
 body {
     background-color: rgb(233, 183, 233);
 }
+
+button {
+    background-color: #E0BFB8;
+    border-radius: 0px 5px 5px 0px;
+    border: 1px solid black;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+  }
+  
+  .activated {
+    background-color: rgb(115, 115, 163);
+    border-radius: 0px 5px 5px 0px;
+    border: 1px solid;
+    color: white;
+  }

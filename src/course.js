@@ -8,6 +8,7 @@ class Course {
         this.name = name
         this.id = id
         this.students = students
+        this.active = false
 
         this.element = document.createElement('button')
         this.element.dataset.id = this.id
@@ -57,8 +58,13 @@ class Course {
         dropDown.appendChild(option)
     }
 
-    deleteCourse = () => {
+    deleteCourse = (event) => {
         if(event.target.innerText === "X"){
+            for(const s of Student.all){
+                if(s.course_id === this.id){
+                    s.element.remove()
+                }
+            }
             this.element.remove()
             courseCall.deleteCourse(this.id)
         }
