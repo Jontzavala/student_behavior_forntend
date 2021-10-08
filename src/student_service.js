@@ -74,6 +74,13 @@ class StudentService {
         fetch(this.port + `/students/${id}`, {method: 'DELETE'})
         .then(response => response.json())
         .then(json => alert(json.message))
+        for(let i = 0; i<Student.all.length; i++){
+            
+            if(Student.all[i].id === parseInt(id)){
+                Student.all.splice(i, 1)
+            }
+        }
+        //debugger
         
     }
 }

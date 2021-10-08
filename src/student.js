@@ -17,19 +17,24 @@ class Student {
 
     static filteredByCourse(filteredCourse){
         if(filteredCourse){
-            for(const s of Student.all){
+             const sortedStudents = Student.all.sort((a,b) => (a.seat_number > b.seat_number)? 1:-1)
+             Student.container.innerHTML = ""
+            for(const s of sortedStudents){
                 if(s.course_id === parseInt(filteredCourse.id)){
+                
                     //debugger
-                    s.element.style.display = ""
-                    //s.render()
+                    //s.element.style.display = ""
+                    s.render()
+                    Student.container.append(s.element)
                     //s.attachToDom(s.render())
                 }else{
-                    s.element.style.display = "none"
+                    s.element.remove()
                 }
             }
         }else{
             for(const s of Student.all){
-                s.element.style.display = ""
+                s.render()
+                 Student.container.append(s.element)
             }
         }
     }
@@ -37,12 +42,13 @@ class Student {
     render(){
         this.element.innerHTML = `
         <div data-id="${this.id}">
-        <h3 class="student_name">${this.name}</h2>
+        <h2 class="student_name">${this.name}</h2>
         <p class="course">${this.course.name}</p>
         <p class="seat_number">${this.seat_number}</p>
         </div>
         <button class="edit" data-id=${this.id}>Edit Student</button>
         <button class="delete" data-id=${this.id}>Delete Student</button>
+        <button id="open">Behavior</button>
         `
         return this.element
     }
@@ -70,6 +76,7 @@ class Student {
             e.target.innerText = "Save Student"
             this.createEditForm(e.target)
         }else if(e.target.innerText === "Delete Student"){
+            this.element.remove()
             studentCall.deleteStudent(e)
 
         }else if(e.target.innerText === "Save Student"){
