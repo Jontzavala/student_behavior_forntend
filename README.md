@@ -27,7 +27,6 @@ That should open up vscode then you'll want to run ```open index.html``
 
 That will open up the front end but we still have to get the backend up and running here is the link to that:
 https://github.com/Jontzavala/student_behavior_backend
-
 ## Using Student Behavior App
 
 First you have to make sure the backend is running before you can do anything.

@@ -25,6 +25,7 @@ class Course {
         <br>
         `
         return this.element
+
     }
 
     addtoDom(){

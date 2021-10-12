@@ -1,12 +1,11 @@
 class Student {
     static all = [];
     static container = document.getElementById("students-container")
-    constructor({name, id, seat_number, course_id, behaviors, course}){
+    constructor({name, id, seat_number, course_id, course}){
         this.name = name
         this.id = id
         this.seat_number = seat_number
         this.course_id = course_id
-        this.behaviors = behaviors
         this.course = course
         this.element = document.createElement('li');
         this.element.dataset['id'] = id;
@@ -21,20 +20,11 @@ class Student {
              Student.container.innerHTML = ""
             for(const s of sortedStudents){
                 if(s.course_id === parseInt(filteredCourse.id)){
-                
-                    //debugger
-                    //s.element.style.display = ""
                     s.render()
-                    Student.container.append(s.element)
-                    //s.attachToDom(s.render())
+                    s.attachToDom(s.render())
                 }else{
                     s.element.remove()
                 }
-            }
-        }else{
-            for(const s of Student.all){
-                s.render()
-                 Student.container.append(s.element)
             }
         }
     }
@@ -48,7 +38,6 @@ class Student {
         </div>
         <button class="edit" data-id=${this.id}>Edit Student</button>
         <button class="delete" data-id=${this.id}>Delete Student</button>
-        <button id="open">Behavior</button>
         `
         return this.element
     }
@@ -76,7 +65,6 @@ class Student {
             e.target.innerText = "Save Student"
             this.createEditForm(e.target)
         }else if(e.target.innerText === "Delete Student"){
-            this.element.remove()
             studentCall.deleteStudent(e)
 
         }else if(e.target.innerText === "Save Student"){
