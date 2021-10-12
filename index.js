@@ -9,7 +9,6 @@ const seatNumberValue = document.getElementById('student-seat-number');
 
 studentCall.getStudents()
 courseCall.getCourses()
-
 form.addEventListener('submit', handleSubmit)
 
 function handleSubmit(e){

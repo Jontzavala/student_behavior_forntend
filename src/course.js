@@ -67,7 +67,13 @@ class Course {
                 }
             }
             this.element.remove()
+            this.removeFromDropDown()
             courseCall.deleteCourse(this.id)
         }
+    }
+
+    removeFromDropDown(){
+        let grabDropDown = document.querySelector("#course-dropdown > option:nth-child(2)")
+        grabDropDown.remove()
     }
 }

@@ -20,13 +20,23 @@ class Student {
              Student.container.innerHTML = ""
             for(const s of sortedStudents){
                 if(s.course_id === parseInt(filteredCourse.id)){
+                    //debugger
+                    
+                    //s.element.style.display = ""
                     s.render()
+                    //Student.container.append(s.element)
                     s.attachToDom(s.render())
+                    
                 }else{
                     s.element.remove()
                 }
             }
-        }
+        }//else{
+        //     for(const s of Student.all){
+        //         s.render()
+        //         //Student.container.append(s.element)
+        //     }
+        // }
     }
 
     render(){
@@ -72,6 +82,7 @@ class Student {
             e.target.innerText = "Edit Student"
             this.updatedStudent()
         }
+
     }
 
     attachToDom(){
