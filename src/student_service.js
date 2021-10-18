@@ -64,7 +64,7 @@ class StudentService {
         fetch(this.port + `/students/${id}`, configObject)
         .then( r => r.json())
         .then(json => {
-            student.render()
+            student.render(json)
         })
     }
 
@@ -80,7 +80,5 @@ class StudentService {
                 Student.all.splice(i, 1)
             }
         }
-        //debugger
-        
     }
 }
