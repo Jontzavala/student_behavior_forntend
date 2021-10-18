@@ -1,9 +1,38 @@
-body {
-    background-color: rgb(233, 183, 233);
+h1 {
+  text-align: center;
 }
 
+
+
+body {
+    background-color: #96BB9D;
+}
+
+#courses-container {
+  text-align: center;
+  
+  width: fit-content;
+}
+
+#students-form {
+  text-align: center;
+}
+
+
+
+li {
+  list-style-type: none;
+  text-align: center;
+  border: 1px solid black;
+  float: left;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+
 button {
-    background-color: #E0BFB8;
+    background-color:#E0CDAF;
     border-radius: 0px 5px 5px 0px;
     border: 1px solid black;
     color: black;
@@ -11,6 +40,17 @@ button {
     text-align: center;
     display: inline-block;
     font-size: 16px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-right: 10px;
+
+  }
+
+  button:hover{
+    background-color: #E8BB9E;
+  }
+
+  button.delete:hover{
+    background-color: red;
   }
   
   #delete-bttn{
@@ -23,21 +63,23 @@ button {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     color: black;
-    background-color: coral;
+    background-color: #D1CEC5;
     text-align: center;
     transition: all 0.2s;
   }
 
   #delete-bttn:hover{
-    background-color: cyan;
+    background-color: red;
   }
 
 
 
 
   .activated {
-    background-color: rgb(115, 115, 163);
+    background-color: #9E8E91;
     border-radius: 0px 5px 5px 0px;
     border: 1px solid;
-    color: white;
+    color: black;
   }
+  
+  
