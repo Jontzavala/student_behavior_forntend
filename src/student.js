@@ -29,6 +29,31 @@ class Student {
         }
     }
 
+
+
+
+
+    static handleSearch(event){
+        event.preventDefault()
+        Student.studentSearch()
+        event.target.reset()
+    }
+
+    static studentSearch(){
+        const searchedStudents = Student.all.filter(student => {
+            return (
+                student.name.includes(document.querySelector("#students-search").value)
+            )
+        })
+        Student.container.innerHTML = ""
+        for(const s of searchedStudents){
+            s.render()
+            s.attachToDom()
+        }
+       
+    }
+
+
     render(){
         this.element.innerHTML = `
         <div data-id="${this.id}">
